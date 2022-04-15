@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147208165-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+        gtag('config', 'UA-147208165-1');
+    </script>
+    <title>Data Processing of traffic and Microclimate 2021</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+    <style>
+        .bd-placeholder-img {
+             font-size: 1.925rem;
+             text-anchor: middle;
+             -webkit-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none;
+        }
+
+     @media (min-width: 768px) {
+         .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+          }
+     }
+    
+     .jumbotron {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      margin-bottom: 0;
+      background-color: #fff;
+     }
+     @media (min-width: 768px) {
+        .jumbotron {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+     }
+
+     .jumbotron p:last-child {
+      margin-bottom: 0;
+     }
+
+     .jumbotron-heading {
+      font-weight: 300;
+     }
+
+     .jumbotron .container {
+      max-width: 40rem;
+     }
+
+     footer {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+     }
+
+     footer p {
+      margin-bottom: .25rem;
+     }      
+     .btn-sm { margin-bottom: .25rem !important; }
+
+     .my-custom-scrollbar {
+        position: relative;
+        height: 400px;
+        overflow: auto;
+        }
+     .table-wrapper-scroll-y {
+        display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-light bg-light shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+              <i class="fa fa-cog fa-spin fa-fw"></i>
+              <strong>Vehicles and Microclimate</strong>
+            </a>
+          </div>
+          <div class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Mobility and Transport</a>
+          </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <p><small class="text-muted">Last updated: <strong>01-03-2022 12:53</strong></small></p>
+        
+                <h4 class="jumbotron-heading">Data Science Environment Sustainability</h4>
+                <h2><strong>Highlight Data Vehicles Density and Microclimate 2021 in Bandung city</strong></h2>
+        
+                <h3 class="jumbotron-heading"><span class="bg-warning">4 </span> Urban Regions | <span class="bg-warning">2</span> Suburban Regions</h3>
+              <p class="lead text-muted">
+                <strong>Visualization</strong> and <strong>Data Processing</strong> of Density Vehicles in Urban and Microclimate 2021</p>
+              <p><small class="text-muted">
+                Do you Agree ? Help us improve data quality by <a href="https://bit.ly/EL6240-Datascience-Web">filling out</a> this form.
+              </small></p>
+              <p>
+                <a href="index.html" class="btn btn-outline-primary btn-sm">Home</a>
+                <a href="traffic.html" class="btn btn-outline-primary btn-sm">Traffic</a>
+                <a href="microclimate.html" class="btn btn-outline-primary btn-sm">Microclimate</a> 
+                <a href="mobility.html" class="btn btn-outline-primary btn-sm">Mobility and Transport</a>
+                <a href="statistics.html" class="btn btn-outline-primary btn-sm">Statistics and Predictions</a>      
+              </p>
+            </div>
+        </section>
+    
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <!--Show the identiti of Bandung-->
+                    <div class="col-md-4 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="images/Lambang_Kota_Bandung.png" class="img-fluid" alt="...">
+                            <div class="card-footer">Lambang Kota Bandung</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="images/591px-Locator_kota_bandung.png" class="img-fluid" alt="...">
+                            <div class="card-footer">Peta Lokasi Kota Bandung</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="images/450px-Indonesia_Bandung_City_location_map.png" class="img-fluid" alt="...">
+                            <div class="card-footer">Pembagian Kecamatan Kota Bandung</div>
+                        </div>
+                    </div>
+
+                    <!-- Introduction -->
+                    <section class="jumbotron">
+                        <div class="media">
+                            <img class="align-self-center mr-3" src="images/graph.png" alt="Generic placeholder image">
+                            <div class="media-body">
+                              <h5 class="mt-0">Probability of People Mobility into Center City of Bandung </h5>
+                              <p class="text-justify">The dominance of private vehicles—primarily cars and motorbikes—in the Indonesian transport modal mix has led to an enormous energy demand for fuel, with fuel having an annual consumption growth rate of about 4.5%. Inadequate infrastructure, poor market access, and inefficient spatial structure impede business growth and degrade quality of living. Nation-wide administrative and fiscal decentralization measures, introduced in 2000, substantially changed the landscape for regional and urban development from one that was formerly driven from the central government. This transition, in large part, has negatively affected continuity in urban infrastructure investment. There remains unresolved policy, financial, regulatory, and institutional capacity problems. These issues continue to impact the dynamic and on-going process of decentralization, creating an unpredictable environment for governance, an ambiguous regulatory framework, and an uncertain business climate for infrastructure development. Local governments have had difficulties with financial management, including multi-year financing, loan risk assessment, loan management, and calculating cash flows, as well as the over-riding issues of transparency and accountability.</p>
+                              <p class="mb-0 text-justify">Over 55% of Indonesians are living in some 300 cities, of which six urban agglomeration centers13 suffer the most severe transportation problems. This traffic congestion is characterized by insufficient public transport with very low modal shares; no urban rail systems (excepting some commuter train services); one sub-optimal BRT (bus rapid transit) system in Jakarta, with 16 other cities having an immature semi-BRT; and the remaining major cities left to rely on paratransit for public transport.</p>
+                            </div>
+                          </div>
+                    </section>
+                   
+                    <!--Show Data of Comunity Density each Regions-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"; style="font-size: 20px;"><strong>Data of Comunity Density in Each Region Bandung City 2021</strong></div>
+                            <div class="card-body table-wrapper-scroll-y my-custom-scrollbar">
+                                <table class="table table-sm table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Kecamatan</th>
+                                                <th scope="col">Total Penduduk (Jiwa)</th>
+                                                <th scope="col">Luas Wilayah (ha)</th>
+                                                <th scope="col">Density (Jiwa/ha)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Andir</td>
+                                                <td>99.493</td>
+                                                <td>422</td>
+                                                <td>236</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Astana Anyar</td>
+                                                <td>73.447</td>
+                                                <td>268</td>
+                                                <td>274</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Antapani</td>
+                                                <td>80.096</td>
+                                                <td>422</td>
+                                                <td>190</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Arcamanik</td>
+                                                <td>78.866</td>
+                                                <td>759</td>
+                                                <td>104</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>Babakan Ciparay</td>
+                                                <td>142.528</td>
+                                                <td>707</td>
+                                                <td>202</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Bandung Kidul</td>
+                                                <td>60.922</td>
+                                                <td>542</td>
+                                                <td>112</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">7</th>
+                                                <td>Bandung Kulon</td>
+                                                <td>136.217</td>
+                                                <td>695</td>
+                                                <td>196</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8</th>
+                                                <td>Bandung Wetan</td>
+                                                <td>28.864</td>
+                                                <td>344</td>
+                                                <td>84</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9</th>
+                                                <td>Batununggal</td>
+                                                <td>121.318</td>
+                                                <td>482</td>
+                                                <td>252</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10</th>
+                                                <td>Bojongloa Kaler</td>
+                                                <td>124.506</td>
+                                                <td>312</td>
+                                                <td>399</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">11</th>
+                                                <td>Bojongloa Kidul</td>
+                                                <td>87.480</td>
+                                                <td>520</td>
+                                                <td>168</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">12</th>
+                                                <td>Cibiru</td>
+                                                <td>75.279</td>
+                                                <td>684</td>
+                                                <td>110</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">13</th>
+                                                <td>Cicendo</td>
+                                                <td>96.309</td>
+                                                <td>779</td>
+                                                <td>124</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">14</th>
+                                                <td>Cidadap</td>
+                                                <td>54.448</td>
+                                                <td>842</td>
+                                                <td>65</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15</th>
+                                                <td>Cinambo</td>
+                                                <td>25.465</td>
+                                                <td>425</td>
+                                                <td>60</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">16</th>
+                                                <td>Coblong</td>
+                                                <td>115.061</td>
+                                                <td>731</td>
+                                                <td>157</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">17</th>
+                                                <td>Gedebage</td>
+                                                <td>41.298</td>
+                                                <td>996</td>
+                                                <td>41</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">18</th>
+                                                <td>Kiaracondong</td>
+                                                <td>131.313</td>
+                                                <td>580</td>
+                                                <td>226</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">19</th>
+                                                <td>Lengkong</td>
+                                                <td>71.196</td>
+                                                <td>591</td>
+                                                <td>120</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20</th>
+                                                <td>Mandalajati</td>
+                                                <td>72.949</td>
+                                                <td>480</td>
+                                                <td>152</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">21</th>
+                                                <td>Panyileukan</td>
+                                                <td>40.374</td>
+                                                <td>531</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">22</th>
+                                                <td>Rancasari</td>
+                                                <td>85.642</td>
+                                                <td>701</td>
+                                                <td>122</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">23</th>
+                                                <td>Regol</td>
+                                                <td>80.961</td>
+                                                <td>474</td>
+                                                <td>171</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">24</th>
+                                                <td>Sukajadi</td>
+                                                <td>102.766</td>
+                                                <td>528</td>
+                                                <td>195</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">25</th>
+                                                <td>Sukasari</td>
+                                                <td>77.601</td>
+                                                <td>636</td>
+                                                <td>122</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">26</th>
+                                                <td>Sumur Bandung</td>
+                                                <td>37.544</td>
+                                                <td>349</td>
+                                                <td>108</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">27</th>
+                                                <td>Ujungberung</td>
+                                                <td>89.042</td>
+                                                <td>624</td>
+                                                <td>143</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">28</th>
+                                                <td>Buahbatu</td>
+                                                <td>103.434</td>
+                                                <td>746</td>
+                                                <td>139</td>
+                                            </tr>
+                                          <tr>
+                                              <th scope="row">29</th>
+                                              <td>Cibeunying Kaler</td>
+                                              <td>70.560</td>
+                                              <td>464</td>
+                                              <td>152</td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">30</th>
+                                              <td>Cibeunying Kidul</td>
+                                              <td>113.281</td>
+                                              <td>414</td>
+                                              <td>274</td>
+                                          </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">Data Comunity Density in each regions, Male, Female and Total of them</div>
+                        </div>
+                    </div>
+                    <!-- Tabel of Vehicles Type in Urban and its Distribution-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"; style="font-size: 20px;"><strong>Data of Vehicles Density in Each Region Bandung City 2021</strong></div>
+                            <div class="card-body table-wrapper-scroll-y my-custom-scrollbar">
+                                <table class="table table-sm table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Kecamatan</th>
+                                                <th scope="col">Motorcycle</th>
+                                                <th scope="col">Cars</th>
+                                                <th scope="col">Truck</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Andir</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Astana Anyar</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Antapani</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Arcamanik</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>Babakan Ciparay</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Bandung Kidul</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">7</th>
+                                                <td>Bandung Kulon</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8</th>
+                                                <td>Bandung Wetan</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9</th>
+                                                <td>Batununggal</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10</th>
+                                                <td>Bojongloa Kaler</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">11</th>
+                                                <td>Bojongloa Kidul</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">12</th>
+                                                <td>Cibiru</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">13</th>
+                                                <td>Cicendo</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">14</th>
+                                                <td>Cidadap</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15</th>
+                                                <td>Cinambo</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">16</th>
+                                                <td>Coblong</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">17</th>
+                                                <td>Gedebage</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">18</th>
+                                                <td>Kiaracondong</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">19</th>
+                                                <td>Lengkong</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20</th>
+                                                <td>Mandalajati</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">21</th>
+                                                <td>Panyileukan</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">22</th>
+                                                <td>Rancasari</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">23</th>
+                                                <td>Regol</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">24</th>
+                                                <td>Sukajadi</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">25</th>
+                                                <td>Sukasari</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">26</th>
+                                                <td>Sumur Bandung</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">27</th>
+                                                <td>Ujungberung</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">28</th>
+                                                <td>Buahbatu</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                          <tr>
+                                              <th scope="row">29</th>
+                                              <td>Cibeunying Kaler</td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">30</th>
+                                              <td>Cibeunying Kidul</td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                          </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">Data Comunity Density in each regions, Male, Female and Total of them</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right"><a href="#"> Back to Top</a></p>
+            <p><strong>Vehicles Density & Microclimate</strong> are Data Science project based learning using information of Microclimate and Vehilce Density in several urban area Bandung City. The Data (Primary Data) were collected with direc investigation using sensor Based IoT <a href="#">(API Sensor)</a> and Camera live streaming ATCS <a href="http://atcs-dishub.bandung.go.id/">(Live Streaming ATCS).</a>  Furthermore we are using secondary data from <a href="https://bandungkota.bps.go.id/">BPS Kota Bandung</a>  </p>
+            <p><small><strong>2022</strong> | <strong> Galang Adira, et al.</strong> (galangadira89@gmail.com) | <strong>Computer Engineering STEI ITB</strong></small></p>
+        </div>
+    </footer>
+</body>
+</html>

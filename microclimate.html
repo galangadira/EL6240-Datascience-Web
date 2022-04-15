@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147208165-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+        gtag('config', 'UA-147208165-1');
+    </script>
+    <title>Data Processing of traffic and Microclimate 2021</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <style>
+        .bd-placeholder-img {
+             font-size: 1.925rem;
+             text-anchor: middle;
+             -webkit-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none;
+        }
+
+     @media (min-width: 768px) {
+         .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+          }
+     }
+    
+     .jumbotron {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      margin-bottom: 0;
+      background-color: #fff;
+     }
+     @media (min-width: 768px) {
+        .jumbotron {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+     }
+
+     .jumbotron p:last-child {
+      margin-bottom: 0;
+     }
+
+     .jumbotron-heading {
+      font-weight: 300;
+     }
+
+     .jumbotron .container {
+      max-width: 40rem;
+     }
+
+     footer {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+     }
+
+     footer p {
+      margin-bottom: .25rem;
+     }      
+     .btn-sm { margin-bottom: .25rem !important; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-light bg-light shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+              <i class="fa fa-cog fa-spin fa-fw"></i>
+              <strong>Vehicles and Microclimate</strong>
+            </a>
+          </div>
+          <div class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Microclimate</a>
+          </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <p><small class="text-muted">Last updated: <strong>01-03-2022 12:53</strong></small></p>
+        
+                <h4 class="jumbotron-heading">Data Science Environment Sustainability</h4>
+                <h2><strong>Highlight Data Vehicles Density and Microclimate 2021 in Bandung city</strong></h2>
+        
+                <h3 class="jumbotron-heading"><span class="bg-warning">4 </span> Urban Regions | <span class="bg-warning">2</span> Suburban Regions</h3>
+              <p class="lead text-muted">
+                <strong>Visualization</strong> and <strong>Data Processing</strong> of Density Vehicles in Urban and Microclimate 2021</p>
+              <p><small class="text-muted">
+                Do you Agree ? Help us improve data quality by <a href="https://bit.ly/EL6240-Datascience-Web">filling out</a> this form.
+              </small></p>
+              <p>
+                <a href="index.html" class="btn btn-outline-primary btn-sm">Home</a>
+                <a href="traffic.html" class="btn btn-outline-primary btn-sm">Traffic</a>
+                <a href="microclimate.html" class="btn btn-outline-primary btn-sm">Microclimate</a> 
+                <a href="mobility.html" class="btn btn-outline-primary btn-sm">Mobility and Transport</a>
+                <a href="statistics.html" class="btn btn-outline-primary btn-sm">Statistics and Predictions</a>      
+              </p>
+            </div>
+        </section>
+    
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <!-- Introduction -->
+                    <section class="jumbotron">
+                        <div class="media">
+                            <img class="align-self-center mr-3" src="images/sensor-fix-station.png" alt="Generic placeholder image">
+                            <div class="media-body">
+                              <h5 class="mt-0">Temperature and Humidity Fix Station Sensor</h5>
+                              <p>This section addresses the system to get temperature and humidity data using a telemetry sensor. The implementation of the telemetry tool uses the SHT35 sensor which has an accuracy value of ±0.2 °C and ±2 %RH, 
+                                  for temperature and humidity, respectively. The tip of the sensor is protected by a Stevenson screen to block direct solar radiation. The telemetry sensor retrieves temperature and humidity data every minute and 
+                                  sends to the database via MQTT (Message Queuing Telemetry Transport) lightweight communication protocol every hour. On some remaining time, it goes into sleep mode, and signal wake up from RTC (Real Time Clock) DS3231, 
+                                  with an AT24C32 EEPROM (Electrically Erasable Programmable Read-only Memory) used as a temporary data storage area. In the cloud, our system takes and advantage of services from Amazon Web Service (AWS). The AWS EC2 service 
+                                  utilizes Mosquitto MQTT broker. AWS DynamoDB is a place to store data in noSQL type. AWS Lambda is a module to compute and store query functions to the database. And the AWS API (Application Programming Interface) is to provide API access that triggers functions in Lambda.</p>
+                            </div>
+                          </div>
+                    </section>
+
+                    <!-- Show Table of research location-->
+                    <div class="col-md-12 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"; style="font-size: 20px;"><strong>Cordinate Location of Research</strong></div>
+                            <div class="card-body">
+                                <table class="table table-sm table-striped table-hover">
+                                    <thead>
+                                        <tr class="table-dark">
+                                            <th scope="col">No</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Street</th>
+                                            <th scope="col">Latitude</th>
+                                            <th scope="col">Longitude</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-primary">
+                                            <th scope="row">1</th>
+                                            <td>Urban I</td>
+                                            <td>Ruas Otista</td>
+                                            <td>-6.920615</td>
+                                            <td>107.602744</td>
+                                        </tr>
+                                        <tr class="bg-success">
+                                            <th scope="row">2</th>
+                                            <td>Urban II</td>
+                                            <td>Ruas Batununggal</td>
+                                            <td>-6.949885</td>
+                                            <td>107.626101</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <th scope="row">3</th>
+                                            <td>Urban III</td>
+                                            <td>Simpang Pahlawan</td>
+                                            <td>-6.897758</td>
+                                            <td>107.634188</td>
+                                        </tr>
+                                        <tr class="bg-danger">
+                                            <th scope="row">4</th>
+                                            <td>Urban IV</td>
+                                            <td>Simpang Telkom</td>
+                                            <td>-6.899292</td>
+                                            <td>107.619276</td>
+                                        </tr>
+                                        <tr class="bg-info">
+                                            <th scope="row">5</th>
+                                            <td>Suburban I</td>
+                                            <td>Batununggal Residence</td>
+                                            <td>-6.954817</td>
+                                            <td>107.623313</td>
+                                        </tr>
+                                        <tr class="bg-info">
+                                            <th scope="row">6</th>
+                                            <td>Suburban II</td>
+                                            <td>Cikutra Residence</td>
+                                            <td>-6.888136</td>
+                                            <td>107.633219</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Show Map of Research-->
+                    <div class="col-md-12 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header"; style="font-size: 30px;"><strong>Map of Research Location</strong></div>
+                            <img src="images/3-map.png" class="card-image-top" alt="...">
+                            <div class="card-footer">Ruas Otista (Urban I); Sp. Batununggal (Urban II); Sp. Pahlawan (Urban III); Sp. Telkom (Urban IV); Batununggal Residence (Suburban I); Cikutra Residence (Suburban II)</div>
+                        </div>
+                    </div>
+                    
+                    <!--Show Data of Temperature Urban I-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"><strong>Microclimate Urban I</strong></div>
+                            <img src="images/Otista-Urban-I/2021-08-31.png" class="card-image-top" alt="...">
+                            <div class="card-footer text-center">Correlation of Vehicle Density to Urban Heat Island</div>
+                        </div>
+                    </div>
+                   
+                    <!--Show Data of Temperature Urban II-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"><strong>Microclimate Urban II</strong></div>
+                            <img src="images/Otista-Urban-I/2021-09-17.png" class="card-image-top" alt="...">
+                            <div class="card-footer text-center">Correlation of Vehicle Density to Urban Heat Island</div>
+                        </div>
+                    </div>
+                    <!--Show Data of Temperatur Temperature Urban III-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"><strong>Microclimate Urban III</strong></div>
+                            <img src="images/Otista-Urban-I/2021-09-18.png" class="card-img-top" alt="...">
+                            <div class="card-footer text-center">Temperatur and Urban Head Island Phenomenon</div>
+                        </div>
+                    </div>
+                    <!--Show Data of Temperature Urban IV-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"><strong>Microclimate Urban IV</strong></div>
+                            <img src="images/Otista-Urban-I/2021-09-21.png" class="card-image-top" alt="...">
+                            <div class="card-footer text-center">Correlation of Vehicle Density to Urban Heat Island</div>
+                        </div>
+                    </div>
+                    <!--Show Data of Temperatur SubUrban I-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"><strong>Microclimate Suburban I</strong></div>
+                            <img src="images/Resident/2021-10-08.png" class="card-img-top" alt="...">
+                            <div class="card-footer text-center">Temperatur and Urban Head Island Phenomenon</div>
+                        </div>
+                    </div>
+                    <!--Show Data of Temperature SubUrban II-->
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"><strong>Microclimate Suburban II</strong></div>
+                            <img src="images/Resident/2021-10-09.png" class="card-image-top" alt="...">
+                            <div class="card-footer text-center">Correlation of Vehicle Density to Urban Heat Island</div>
+                        </div>
+                    </div>
+                    <!--Show Data of Vehicle Velocity in traffic Jam-->
+                    <div class="col-md-12 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header"; style="font-size: 30px;"><strong>Urban Temperature Alteration and Urban Heat island</strong></div>
+                            <img src="images/12-UHI-All-Microclimate.png" class="card-image-top" alt="...">
+                            <div class="card-footer">Ruas Otista (Urban I); Sp. Batununggal (Urban II); Sp. Pahlawan (Urban III); Sp. Telkom (Urban IV); Batununggal Residence (Suburban I); Cikutra Residence (Suburban II) </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right"><a href="#"> Back to Top</a></p>
+            <p><strong>Vehicles Density & Microclimate</strong> are Data Science project based learning using information of Microclimate and Vehilce Density in several urban area Bandung City. The Data (Primary Data) were collected with direc investigation using sensor Based IoT <a href="#">(API Sensor)</a> and Camera live streaming ATCS <a href="http://atcs-dishub.bandung.go.id/">(Live Streaming ATCS).</a>  Furthermore we are using secondary data from <a href="https://bandungkota.bps.go.id/">BPS Kota Bandung</a>  </p>
+            <p><small><strong>2022</strong> | <strong> Galang Adira, et al.</strong> (galangadira89@gmail.com) | <strong>Computer Engineering STEI ITB</strong></small></p>
+        </div>
+    </footer>
+</body>
+</html>

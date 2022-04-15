@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147208165-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+        gtag('config', 'UA-147208165-1');
+    </script>
+    <title>Data Processing of traffic and Microclimate 2021</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <style>
+        .bd-placeholder-img {
+             font-size: 1.925rem;
+             text-anchor: middle;
+             -webkit-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none;
+        }
+
+     @media (min-width: 768px) {
+         .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+          }
+     }
+    
+     .jumbotron {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      margin-bottom: 0;
+      background-color: #fff;
+     }
+     @media (min-width: 768px) {
+        .jumbotron {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+     }
+
+     .jumbotron p:last-child {
+      margin-bottom: 0;
+     }
+
+     .jumbotron-heading {
+      font-weight: 300;
+     }
+
+     .jumbotron .container {
+      max-width: 40rem;
+     }
+
+     footer {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+     }
+
+     footer p {
+      margin-bottom: .25rem;
+     }      
+     .btn-sm { margin-bottom: .25rem !important; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-light bg-light shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+              <i class="fa fa-cog fa-spin fa-fw"></i>
+              <strong>Vehicles and Microclimate</strong>
+            </a>
+          </div>
+          <div class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Traffic</a>
+          </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <p><small class="text-muted">Last updated: <strong>01-03-2022 12:53</strong></small></p>
+        
+                <h4 class="jumbotron-heading">Data Science Environment Sustainability</h4>
+                <h2><strong>Highlight Data Vehicles Density and Microclimate 2021 in Bandung city</strong></h2>
+        
+                <h3 class="jumbotron-heading"><span class="bg-warning">4 </span> Urban Regions | <span class="bg-warning">2</span> Suburban Regions</h3>
+              <p class="lead text-muted">
+                <strong>Visualization</strong> and <strong>Data Processing</strong> of Density Vehicles in Urban and Microclimate 2021</p>
+              <p><small class="text-muted">
+                Do you Agree ? Help us improve data quality by <a href="https://bit.ly/EL6240-Datascience-Web">filling out</a> this form.
+              </small></p>
+              <p>
+                <a href="index.html" class="btn btn-outline-primary btn-sm">Home</a>
+                <a href="traffic.html" class="btn btn-outline-primary btn-sm">Traffic</a>
+                <a href="microclimate.html" class="btn btn-outline-primary btn-sm">Microclimate</a> 
+                <a href="mobility.html" class="btn btn-outline-primary btn-sm">Mobility and Transport</a>
+                <a href="statistics.html" class="btn btn-outline-primary btn-sm">Statistics and Predictions</a>     
+              </p>
+            </div>
+        </section>
+    
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <!-- Introduction -->
+                    <section class="jumbotron">
+                        <div class="media">
+                            <img class="align-self-center mr-3" src="images/yolov5-eg.jpg" alt="Generic placeholder image">
+                            <div class="media-body">
+                              <h5 class="mt-0">Counting Car Process </h5>
+                              <p>We carry out vehicle counting process automatically using YOLOv5 framework. YOLOV5 was a target detection algorithm based on regression. This algorithm has united many advantages of deep learning 
+                                  target detection framework. Yolov5 provides several models that can be used to perform object detection. In this project we use YOLOv5s as a model to carry out the vehicle detection process because 
+                                  of its superior speed in detecting vehicles. After going through data cleaning process, image data will be processed by YOLOv5. YOLOv5 will carry out vehicle detection process. The results of YOLOv5 
+                                  process will be further processed using a python script to obtain the number of existing vehicles. This script will also export the results to a csv file.</p>
+                              <p class="mb-0">From the results of performance tests, there are errors in the results of vehicle counting process. The biggest error occurs in number of motorcycle. This is because most of the vehicles, 
+                                  especially motorcycles, are jostled and blocked by other vehicles. In addition, there are also reading errors due to blurred image conditions and existing lighting conditions.</p>
+                            </div>
+                          </div>
+                    </section>
+
+                    <!-- Show Table of research location-->
+                    <div class="col-md-12 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-center"; style="font-size: 20px;"><strong>Cordinate Location of Research</strong></div>
+                            <div class="card-body">
+                                <table class="table table-sm table-striped table-hover">
+                                    <thead>
+                                        <tr class="table-dark">
+                                            <th scope="col">No</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Street</th>
+                                            <th scope="col">Latitude</th>
+                                            <th scope="col">Longitude</th>
+                                            <th scope="col">ATCS Link</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-primary">
+                                            <th scope="row">1</th>
+                                            <td>Urban I</td>
+                                            <td>Ruas Otista</td>
+                                            <td>-6.920615</td>
+                                            <td>107.602744</td>
+                                            <td>http://45.118.114.26/camera/Ruasotista.m3u8</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <th scope="row">2</th>
+                                            <td>Urban III</td>
+                                            <td>Simpang Pahlawan</td>
+                                            <td>-6.897758</td>
+                                            <td>107.634188</td>
+                                            <td>http://45.118.114.26/camera/Pahlawan.m3u8</td>
+                                        </tr>
+                                        <tr class="bg-danger">
+                                            <th scope="row">3</th>
+                                            <td>Urban IV</td>
+                                            <td>Simpang Telkom</td>
+                                            <td>-6.899292</td>
+                                            <td>107.619276</td>
+                                            <td>http://45.118.114.26/camera/Telkom.m3u8</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Show the map of Observation-->
+                    <div class="col-md-12 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header"; style="font-size: 40px;"><strong>Road Intersection Type In Urban Area</strong></div>
+                            <img src="images/4-model-jalan-traffic.jpg" class="img-fluid" alt="...">
+                            <div class="card-footer">(a) One way in Otista; (b) Four Intersection in Pahlawan; (c) Three Intersection in Telkom</div>
+                        </div>
+                    </div>
+                   
+                    <!--Show Data of Vehicle Velocity in traffic Jam-->
+                    <div class="col-md-12 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header"; style="font-size: 40px;"><strong>Velocity in Traffic Jam</strong></div>
+                            <img src="images/10-queue-model-rev2.png" class="card-image-top" alt="...">
+                            <div class="card-footer">(a) One way in Otista; (b) Four Intersection in Pahlawan; (c) Three Intersection in Telkom</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right"><a href="#"> Back to Top</a></p>
+            <p><strong>Vehicles Density & Microclimate</strong> are Data Science project based learning using information of Microclimate and Vehilce Density in several urban area Bandung City. The Data (Primary Data) were collected with direc investigation using sensor Based IoT <a href="#">(API Sensor)</a> and Camera live streaming ATCS <a href="http://atcs-dishub.bandung.go.id/">(Live Streaming ATCS).</a>  Furthermore we are using secondary data from <a href="https://bandungkota.bps.go.id/">BPS Kota Bandung</a>  </p>
+            <p><small><strong>2022</strong> | <strong> Galang Adira, et al.</strong> (galangadira89@gmail.com) | <strong>Computer Engineering STEI ITB</strong></small></p>
+        </div>
+    </footer>
+</body>
+</html>

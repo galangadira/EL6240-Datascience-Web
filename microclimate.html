@@ -120,7 +120,7 @@
                             <img class="align-self-center mr-3" src="images/sensor-fix-station.png" alt="Generic placeholder image">
                             <div class="media-body">
                               <h5 class="mt-0">Temperature and Humidity Fix Station Sensor</h5>
-                              <p>This section addresses the system to get temperature and humidity data using a telemetry sensor. The implementation of the telemetry tool uses the SHT35 sensor which has an accuracy value of ±0.2 °C and ±2 %RH, 
+                              <p class="text-justify">This section addresses the system to get temperature and humidity data using a telemetry sensor. The implementation of the telemetry tool uses the SHT35 sensor which has an accuracy value of ±0.2 °C and ±2 %RH, 
                                   for temperature and humidity, respectively. The tip of the sensor is protected by a Stevenson screen to block direct solar radiation. The telemetry sensor retrieves temperature and humidity data every minute and 
                                   sends to the database via MQTT (Message Queuing Telemetry Transport) lightweight communication protocol every hour. On some remaining time, it goes into sleep mode, and signal wake up from RTC (Real Time Clock) DS3231, 
                                   with an AT24C32 EEPROM (Electrically Erasable Programmable Read-only Memory) used as a temporary data storage area. In the cloud, our system takes and advantage of services from Amazon Web Service (AWS). The AWS EC2 service 
